@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Django News</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        background-color: #fdfdfd;
+    }
+
+    .topButton {
+        position: fixed;
+        right: 45px;
+        bottom: 45px;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+    </style>
+    <body>
+
+    <nav class="navbar navbar-dark fixed-top bg-dark justify-content-center">
+      <a class="navbar-brand" href="{% url 'news_list' %}">Главная страница</a>
+      <a class="navbar-brand" href="{% url 'stats' %}">Статистика</a>
+    </nav>
+
+    {% block content %}{% endblock content %}
+    <a href="#" title="Вернуться к началу страницы" class="topButton">&uparrow; Вверх</a>
+    </body>
+</html>

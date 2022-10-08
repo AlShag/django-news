@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12 mt-3 left">
+            <div class="card p-3">
+                <hr>
+                <p class="text-center">Здесь вы можете выбрать период для получения статистики по просмотрам всех новостей</p>
+                <hr>
+                <form action="" method="post" class="text-center">
+                    {% csrf_token %}
+                    <label for="from_date">Начальная дата:</label>
+                    <input id="from_date" type="date" name="from_date" required="required">
+                    <label for="to_date">Конечная дата:</label>
+                    <input id="to_date" type="date" name="to_date" required="required">
+                    <hr>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% if from_date %}
+    <div class="row">
+        <div class="col-lg-12 mt-3 left">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <hr>
+                    <h2 class="card-title">{{ total_views }}</h2>
+                    <p class="card-text">Просмотров за указанный период:</p>
+                    <div class="d-flex flex-row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+    {% block popular_news %}{% endblock %}
+{% endblock content %}
